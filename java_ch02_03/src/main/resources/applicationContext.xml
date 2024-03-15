@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- bean 만들기 -->
+    <bean id="calAdd" class="daelim.java_ch02.CalAdd" />
+    <bean id="calSub" class="daelim.java_ch02.CalSub" />
+    <bean id="calMul" class="daelim.java_ch02.CalMul" />
+    <bean id="calDiv" class="daelim.java_ch02.CalDiv" />
+
+    <bean id="myCalculator" class="daelim.java_ch02.MyCalculator" />
+
+    <bean id="calAssembler" class="daelim.java_ch02.CalAssembler" >
+        <!-- 생성자에 필요한 객체 넣어주기 -->
+        <constructor-arg ref="calAdd" />
+        <constructor-arg ref="calSub" />
+        <constructor-arg ref="calMul" />
+        <constructor-arg ref="calDiv" />
+    </bean>
+
+</beans>
