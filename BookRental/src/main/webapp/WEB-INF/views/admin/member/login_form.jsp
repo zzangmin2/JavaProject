@@ -11,6 +11,8 @@
 <head>
     <jsp:include page="../../include/title.jsp" />
     <link rel="stylesheet" href="<c:url value="/resources/css/admin/create_account_form.css" />" type="text/css" >
+    <jsp:include page="../include/login_js.jsp" />
+
 </head>
 <body>
     <jsp:include page="../../include/header.jsp" />
@@ -36,25 +38,5 @@
     </section>
     <jsp:include page="../../include/footer.jsp" />
 
-    <script type="text/javascript">
-        function loginForm(){
-            console.log("loginForm() CALLED!");
-
-            let form = document.login_form;
-
-            if(form.id.value == ''){
-                alert("input admin id");
-                form.id.focus();
-            }
-            else if(form.password.value==""){
-                alert("input admin password");
-                form.password.focus();
-            }
-
-            else{
-                form.submit();
-            }
-        }
-    </script>
 </body>
 </html>
