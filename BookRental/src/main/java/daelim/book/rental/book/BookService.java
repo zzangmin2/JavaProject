@@ -1,8 +1,10 @@
 package daelim.book.rental.book;
 
-import daelim.book.rental.BookVO;
+import daelim.book.rental.admin.BookVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class BookService {
@@ -25,4 +27,30 @@ public class BookService {
         }
 
     }
+
+    public List<BookVO> selectAllBook(){
+        System.out.println("[BookService] getAllBooks");
+        return bookDao.selectAllBook();
+    }
+
+    public List<BookVO> selectSearchBook(String keyword){
+        System.out.println("[BookService] getSearchBooks");
+        return bookDao.selectSearchBook(keyword);
+    }
+
+    public BookVO selectBook(int no){
+        System.out.println("[BookService] getBook");
+        return bookDao.selectBook(no);
+    }
+
+    public int modifyBookConfirm(BookVO bookVo){
+        System.out.println("[BookService] updateBook");
+        return bookDao.updateBook(bookVo);
+    }
+
+    public int deleteBookConfirm(int no){
+        System.out.println("[BookService] updateBook");
+        return bookDao.deleteBook(no);
+    }
+
 }

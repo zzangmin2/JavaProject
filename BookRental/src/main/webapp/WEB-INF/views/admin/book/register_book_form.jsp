@@ -79,7 +79,7 @@
 
         } else if (form.file.value == '') {
             alert('SELECT IMAGE FILE');
-            form.thumbnail.focus();
+            form.file.focus();
 
         } else {
             form.submit();

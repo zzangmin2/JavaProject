@@ -45,8 +45,8 @@
       </ul>
     </div>
     <div class="search">
-      <form action="<c:url value="" />" name="search_book_form" method="get">
-        <input type="text"name="b_name" placeholder="Enter the name of the book you are looking for" />
+      <form action="<c:url value="/book/admin/searchBook" />" name="search_book_form" method="get">
+        <input type="text"name="name" placeholder="Enter the name of the book you are looking for" />
         <input type="button"value="search" onclick="searchBookForm()"/>
       </form>
     </div>
@@ -55,3 +55,20 @@
 
 
 </nav>
+<script>
+  function searchBookForm() {
+    console.log('searchBookForm() CALLED!!');
+
+    let form = document.search_book_form;
+
+    if (form.name.value == '') {
+      alert('Enter the name of the book you are looking for.');
+      form.name.focus();
+
+    } else {
+      form.submit();
+
+    }
+
+  }
+</script>
